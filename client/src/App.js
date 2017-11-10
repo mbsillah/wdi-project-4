@@ -17,7 +17,7 @@ class App extends Component {
       var min = Math.ceil(3);
       var max = Math.max(72799)
       var randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-      const res = await axios.get(`http://vgmdb.info/album/${randomResult}`)
+      const res = await axios.get(`https://vgmdb.info/album/${randomResult}`)
       updatedHomeAlbums.push(res.data)
       }
       this.setState({albums: updatedHomeAlbums})
