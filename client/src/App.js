@@ -14,13 +14,18 @@ class App extends Component {
   async componentDidMount() {
     var updatedHomeAlbums = []
     try {
-      for(var i = 0; i < 6;  i++) {
-      var min = Math.ceil(3);
-      var max = Math.max(72799)
-      var randomResult = Math.floor(Math.random() * (max - min + 1)) + min;
-      const res = await axios.get(`https://vgmdb.info/album/${randomResult}`)
-      updatedHomeAlbums.push(res.data)
-      }
+      const res1 = await axios.get(`https://vgmdb.info/album/21096`)
+      updatedHomeAlbums.push(res1.data)
+      const res2 = await axios.get(`https://vgmdb.info/album/56366`)
+      updatedHomeAlbums.push(res2.data)
+      const res3 = await axios.get(`https://vgmdb.info/album/12537`)
+      updatedHomeAlbums.push(res3.data)
+      const res4 = await axios.get(`https://vgmdb.info/album/2491`)
+      updatedHomeAlbums.push(res4.data)
+      const res5 = await axios.get(`https://vgmdb.info/album/16054`)
+      updatedHomeAlbums.push(res5.data)
+      const res6 = await axios.get(`https://vgmdb.info/album/4593`)
+      updatedHomeAlbums.push(res6.data)
       this.setState({albums: updatedHomeAlbums, loading: false})
     } catch(error) {
       console.log(error)
