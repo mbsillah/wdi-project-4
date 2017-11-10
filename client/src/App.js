@@ -7,10 +7,11 @@ import HomePage from './components/HomePage'
 class App extends Component {
 
   state = {
-    albums: []
+    albums: [],
+    loading: true
   }
 
-  async componentWillMount() {
+  async componentDidMount() {
     var updatedHomeAlbums = []
     try {
       for(var i = 0; i < 6;  i++) {
@@ -20,14 +21,14 @@ class App extends Component {
       const res = await axios.get(`https://vgmdb.info/album/${randomResult}`)
       updatedHomeAlbums.push(res.data)
       }
-      this.setState({albums: updatedHomeAlbums})
+      this.setState({albums: updatedHomeAlbums, loading: false})
     } catch(error) {
       console.log(error)
     }
   }
 
   render() {
-    const HomePageComponent = () => (<HomePage albums={this.state.albums}/>)
+    const HomePageComponent = () => (<HomePage albums={this.state.albums} loading={this.state.loading}/>)
     return (
       <Router>
       <div>

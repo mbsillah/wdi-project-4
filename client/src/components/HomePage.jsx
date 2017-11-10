@@ -5,7 +5,7 @@ const HomePage = (props) => {
     return (
         <div>
             <h1>Welcome to Nerdify</h1>
-            <RandomAlbums albums={props.albums}/>
+            <RandomAlbums albums={props.albums} loading={props.loading}/>
         </div>
     );
 };
