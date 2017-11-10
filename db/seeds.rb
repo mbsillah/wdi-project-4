@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Playlist.destroy_all
+Track.destroy_all
+
+musa = User.create(
+    username: "msillah"
+)
+
+playlist1 = Playlist.create(
+    name: "The Greatest",
+    user_id: musa.id
+)
+
+dope = Track.create(
+    title: "Wanted You",
+    album: "Wanted You",
+    total_playtime: "3:48",
+    release_year: "2017",
+    playlist_id: playlist1.id
+)
