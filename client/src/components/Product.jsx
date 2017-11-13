@@ -13,8 +13,7 @@ class Product extends Component {
         try {
             const { productId } = this.props.match.params
             const res = await axios.get(`https://vgmdb.info/product/${productId}`)
-            this.setState({ product: res.data, productAlbums: res.data.albums })
-            console.log(res.data)
+            this.setState({ product: res.data, productAlbums: res.data.albums, loading: false })
         } catch (error) {
             console.log(error)
         }
@@ -23,6 +22,10 @@ class Product extends Component {
 
 
     render() {
+        if (this.state.loading) {
+            return <h1>Loading...</h1>
+        }
+
         return (
             <div>
                 <h2>{this.state.product.name}</h2>
