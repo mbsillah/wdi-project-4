@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import axios from "axios"
 import HomePage from './components/HomePage'
 import Search from './components/Search'
+import NavBar from './components/NavBar'
 
 class App extends Component {
 
@@ -38,9 +39,10 @@ class App extends Component {
     return (
       <Router>
       <div>
+      <NavBar />
         <Switch>
           <Route exact path="/" render={HomePageComponent}/>
-          <Route exact path="/search" render={Search} />
+          <Route exact path="/search/:searchItem" component={Search} />
         </Switch>
       </div>
       </Router>

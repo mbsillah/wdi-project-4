@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Album extends Component {
+class componentName extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class Album extends Component {
     }
 }
 
-export default Album;
+export default componentName;
