@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 class Search extends Component {
 
     state = {
-        albumResults: '',
-        productResults: '',
+        albumResults: [],
+        productResults: [],
         loading: true
     }
 
@@ -46,6 +46,8 @@ class Search extends Component {
         if (this.state.loading) {
             return <h1>Loading...</h1>
         }
+
+
         return (
             <div>
                 <h4>Albums: </h4>

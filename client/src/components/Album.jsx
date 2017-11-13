@@ -14,7 +14,6 @@ class Album extends Component {
             const { albumId } = this.props.match.params
             const res = await axios.get(`https://vgmdb.info/album/${albumId}`)
             this.setState({ album: res.data, discs: res.data.discs, loading: false })
-            console.log(this.state.discs)
         } catch (error) {
             console.log(error)
         }
