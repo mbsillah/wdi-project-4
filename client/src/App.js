@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 //import styled from 'styled-components'
 import axios from "axios"
 import HomePage from './components/HomePage'
+import Search from './components/Search'
 
 class App extends Component {
 
@@ -39,6 +40,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" render={HomePageComponent}/>
+          <Route exact path="/search" render={Search} />
         </Switch>
       </div>
       </Router>
