@@ -5,6 +5,7 @@ import axios from "axios"
 import HomePage from './components/HomePage'
 import Search from './components/Search'
 import NavBar from './components/NavBar'
+import Album from './components/Album'
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" render={HomePageComponent}/>
           <Route exact path="/search/:searchItem" component={Search} />
+          <Route exact path="/album/:albumId" component={Album} />
         </Switch>
       </div>
       </Router>

@@ -10,9 +10,7 @@ padding: 15px;
 class NavBar extends Component {
 
     state = {
-        search: "",
-        redirectToSearchPage: false,
-        key: ''
+        search: ""
     }
 
     handleChange = (event) => {

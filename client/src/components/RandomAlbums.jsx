@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Soundtracks = styled.div`
 display: flex;
@@ -15,7 +16,9 @@ const RandomAlbums = (props) => {
         <Soundtracks>
            {props.albums.map((album) => {
                return (
+                   <Link to={`/${album.link}`}>
                    <img src={album.picture_full} alt={album.name}/>
+                   </Link>
                )
            }
         )}
