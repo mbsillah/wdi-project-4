@@ -1,5 +1,5 @@
-class Api::PlaylistsController < ApplicationController
-    def index
+class Api::PlaylistController < ApplicationController
+      def index
         @playlists = Playlist.all
         render json: @playlists
       end

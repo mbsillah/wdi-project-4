@@ -19,10 +19,23 @@ playlist1 = Playlist.create(
     user_id: musa.id
 )
 
+playlist2 = Playlist.create(
+    name: "Weeboo",
+    user_id: musa.id
+)
+
 dope = Track.create(
     title: "Wanted You",
     album: "Wanted You",
     total_playtime: "3:48",
     release_year: "2017",
     playlist_id: playlist1.id
+)
+
+sunsetWaltz = Track.create(
+    title: "Sunset Waltz",
+    album: "Final Fantasy XV: Original Soundtrack",
+    total_playtime: "1:21",
+    release_year: "2016",
+    playlist_id: playlist2.id
 )

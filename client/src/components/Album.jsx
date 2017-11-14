@@ -34,7 +34,9 @@ class Album extends Component {
                 {this.state.discs.map((disc, index) => {
                     return disc.tracks.map((track) => {
                         return (
-                            <h6>{track.names.English}</h6>
+                            <div>
+                            <p>{track.names.English} {}</p>
+                            </div>
                         )
                     })
                 })}

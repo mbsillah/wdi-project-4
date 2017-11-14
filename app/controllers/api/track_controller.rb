@@ -1,4 +1,4 @@
-class Api::TracksController < ApplicationController
+class Api::TrackController < ApplicationController
     def index
         @tracks = Track.all
         render json: @track
