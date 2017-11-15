@@ -19,8 +19,6 @@ class Album extends Component {
         }
     }
 
-    //{this.props.userLoggedIn ? <Link to={`/user/${this.props.currentUser.id}`}> +</Link> : null }
-
     render() {
 
         if (this.state.loading) {

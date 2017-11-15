@@ -17,7 +17,6 @@ class Playlist extends Component {
         try {
             const res = await axios.get(`/api/user/${this.props.currentUser.id}/playlist/${playlistid}/track`)
             this.setState({ tracks: res.data })
-            console.log(res.data)
         } catch (error) {
             console.log(error)
         }
