@@ -22,6 +22,8 @@ class App extends Component {
     this.setState({currentUser: user, userLoggedIn: !this.state.userLoggedIn})
   }
 
+  //const AlbumComponent = () => (<Album userLoggedIn={this.state.userLoggedIn} />)
+
   
   render() {
     const LogInComponent = () => (<Login changeLogInState={this.changeLogInState}/>)

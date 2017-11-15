@@ -19,7 +19,7 @@ class Album extends Component {
         }
     }
 
-
+    //{this.props.userLoggedIn ? <Link to={`/user/${this.props.currentUser.id}`}> +</Link> : null }
 
     render() {
 
@@ -35,7 +35,7 @@ class Album extends Component {
                     return disc.tracks.map((track) => {
                         return (
                             <div>
-                            <p>{track.names.English} {}</p>
+                            <p>{track.names.English}</p>
                             </div>
                         )
                     })

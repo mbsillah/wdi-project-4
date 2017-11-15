@@ -1,7 +1,7 @@
 class Api::TrackController < ApplicationController
     def index
-        @tracks = Track.all
-        render json: @track
+        @tracks = Playlist.find(params[:playlist_id]).tracks
+        render json: @tracks
       end
     
       def create

@@ -10,10 +10,9 @@ class UserPage extends Component {
 
     async componentWillMount() {
         try {
-            const { userId } = this.props.currentUser.id
+            const userId = this.props.currentUser.id
             const res = await axios.get(`/api/user/${userId}/playlist`)
             this.setState({ playlists: res.data})
-            console.log(res.data)
         } catch (error) {
             console.log(error)
         }
@@ -23,7 +22,7 @@ class UserPage extends Component {
         return (
             <div>
                 <h1>{this.props.currentUser.username}'s Page</h1>
-                <Playlist />
+                <Playlist currentUser={this.props.currentUser}  playlists={this.state.playlists}/>
             </div>
         );
     }

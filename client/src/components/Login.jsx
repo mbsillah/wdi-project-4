@@ -22,7 +22,7 @@ class Login extends Component {
             <div>
                 All users:
                 {this.state.users.map((user) => {
-                    return <Link onClick={() => this.props.changeLogInState(user)} to={`user/${user.id}`}>{user.username}</Link>
+                    return <Link onClick={() => this.props.changeLogInState(user)} to="/">{user.username}</Link>
                 })}
             </div>
         );

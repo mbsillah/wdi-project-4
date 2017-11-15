@@ -1,6 +1,6 @@
 class Api::PlaylistController < ApplicationController
       def index
-        @playlists = Playlist.all
+        @playlists = User.find(params[:user_id]).playlists
         render json: @playlists
       end
     
