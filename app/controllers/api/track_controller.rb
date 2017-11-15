@@ -5,7 +5,10 @@ class Api::TrackController < ApplicationController
       end
     
       def create
-        @track = Track.create!(user_params)
+        @playlist = Playlist.find(params[:playlist_id])
+        @track = Track.new(track_params)
+        @playlist.tracks << @track
+        @playlist.save!
         render json: @track
       end
     
@@ -13,7 +16,7 @@ class Api::TrackController < ApplicationController
         @track = Track.find(params[:id])
         render json: @track
       end
-    
+
       def update
         @track = Track.find(params[:id])
         @track.update!(user_params)
@@ -28,6 +31,6 @@ class Api::TrackController < ApplicationController
       private
     
       def track_params
-        params.require(:user).permit(:title, :album, :total_playtime, :release_year)
+        params.require(:track).permit(:title, :album, :total_playtime, :release_year)
       end
 end

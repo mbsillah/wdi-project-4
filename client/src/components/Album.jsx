@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import AlbumTrack from './AlbumTrack'
 
 class Album extends Component {
 
     state = {
         album: [],
         discs: [],
-        loading: true
+        loading: true,
     }
 
     async componentDidMount() {
@@ -17,6 +18,10 @@ class Album extends Component {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    saveSong = (track) => {
+        
     }
 
     render() {
@@ -33,7 +38,12 @@ class Album extends Component {
                     return disc.tracks.map((track) => {
                         return (
                             <div>
-                            <p>{track.names.English}</p>
+                                <AlbumTrack track={track}
+                                 album={this.state.album}
+                                 currentUser={this.props.currentUser}
+                                 currentPlaylist={this.props.currentPlaylist}
+                                 userLoggedIn={this.props.userLoggedIn}
+                                 />
                             </div>
                         )
                     })

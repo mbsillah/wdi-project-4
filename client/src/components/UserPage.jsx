@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Playlist from './Playlist'
+import UserEdit from './UserEdit'
 
 class UserPage extends Component {
 
@@ -23,6 +24,9 @@ class UserPage extends Component {
             <div>
                 <h1>{this.props.currentUser.username}'s Page</h1>
                 <Playlist currentUser={this.props.currentUser}  playlists={this.state.playlists}/>
+                <UserEdit currentUser={this.props.currentUser}  
+                playlists={this.state.playlists} 
+                setCurrentPlaylist={this.props.setCurrentPlaylist}/>
             </div>
         );
     }
