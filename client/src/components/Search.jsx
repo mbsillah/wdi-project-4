@@ -26,7 +26,7 @@ class Search extends Component {
     }
 
     async componentDidUpdate(prevProps) {
-        if (prevProps.match.params.searchItem !== this.props.match.params.searchItem){
+        if (prevProps.match.params.searchItem !== this.props.match.params.searchItem) {
             var albumSearchResults = []
             var productSearchResults = []
             try {
@@ -38,7 +38,7 @@ class Search extends Component {
             } catch (error) {
                 console.log(error)
             }
-        }       
+        }
     }
 
     render() {

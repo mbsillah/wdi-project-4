@@ -30,7 +30,9 @@ class App extends Component {
 
   render() {
     const LogInComponent = () => (<Login changeLogInState={this.changeLogInState} />)
-    const UserPageComponent = () => (<UserPage currentUser={this.state.currentUser} setCurrentPlaylist={this.setCurrentPlaylist} />)
+    const UserPageComponent = () => (<UserPage currentPlaylist={this.state.currentPlaylist}
+      currentUser={this.state.currentUser}
+      setCurrentPlaylist={this.setCurrentPlaylist} />)
     return (
       <Router>
         <div>

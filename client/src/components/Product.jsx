@@ -33,7 +33,7 @@ class Product extends Component {
                 {this.state.productAlbums.map((album) => {
                     return (
                         <Link to={`/${album.link}`}>
-                        <h6>{album.titles.en}</h6>
+                            <h6>{album.titles.en}</h6>
                         </Link>
                     )
                 })}

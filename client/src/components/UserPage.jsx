@@ -13,7 +13,7 @@ class UserPage extends Component {
         try {
             const userId = this.props.currentUser.id
             const res = await axios.get(`/api/user/${userId}/playlist`)
-            this.setState({ playlists: res.data})
+            this.setState({ playlists: res.data })
         } catch (error) {
             console.log(error)
         }
@@ -23,10 +23,12 @@ class UserPage extends Component {
         return (
             <div>
                 <h1>{this.props.currentUser.username}'s Page</h1>
-                <Playlist currentUser={this.props.currentUser}  playlists={this.state.playlists}/>
-                <UserEdit currentUser={this.props.currentUser}  
-                playlists={this.state.playlists} 
-                setCurrentPlaylist={this.props.setCurrentPlaylist}/>
+                <Playlist currentUser={this.props.currentUser} playlists={this.state.playlists} />
+                <UserEdit
+                    currentPlaylist={this.props.currentPlaylist}
+                    currentUser={this.props.currentUser}
+                    playlists={this.state.playlists}
+                    setCurrentPlaylist={this.props.setCurrentPlaylist} />
             </div>
         );
     }

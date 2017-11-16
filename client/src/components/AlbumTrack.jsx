@@ -4,18 +4,19 @@ import axios from 'axios'
 class AlbumTrack extends Component {
 
     state = {
-            title: '',
-            album: '',
-            total_playtime: '',
-            release_year: ''
+        title: '',
+        album: '',
+        total_playtime: '',
+        release_year: ''
     }
 
     componentWillMount() {
-        this.setState({ 
-            title: this.props.track.names.English, 
-            album: this.props.album.name, 
-            total_playtime: this.props.track.track_length, 
-            release_year: this.props.album.release_date})
+        this.setState({
+            title: this.props.track.names.English,
+            album: this.props.album.name,
+            total_playtime: this.props.track.track_length,
+            release_year: this.props.album.release_date
+        })
     }
 
     addSongtoCurrentPlaylist = async (track) => {
@@ -25,7 +26,8 @@ class AlbumTrack extends Component {
             const res = await axios.post(`/api/user/${userId}/playlist/${playlistId}/track`, {
                 'track': this.state
             })
-            console.log("Success")
+            alert(`Added ${this.state.title} your current playlist`)
+            console.log(res)
         } catch (error) {
             console.log(error)
         }
@@ -41,5 +43,3 @@ class AlbumTrack extends Component {
 }
 
 export default AlbumTrack;
-
-//{this.props.userLoggedIn ? <button onClick={() => this.addSongtoCurrentPlaylist(this.state)}>+</button> : null}

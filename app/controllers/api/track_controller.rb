@@ -25,7 +25,8 @@ class Api::TrackController < ApplicationController
     
       def destroy
         @track = Track.find(params[:id]).delete
-        render status: :ok
+        @tracks = Playlist.find(params[:playlist_id]).tracks
+        render json: @tracks
       end
     
       private

@@ -14,14 +14,14 @@ const RandomAlbums = (props) => {
     }
     return (
         <Soundtracks>
-           {props.albums.map((album) => {
-               return (
-                   <Link to={`/${album.link}`}>
-                   <img src={album.picture_full} alt={album.name}/>
-                   </Link>
-               )
-           }
-        )}
+            {props.albums.map((album) => {
+                return (
+                    <Link to={`/${album.link}`}>
+                        <img src={album.picture_full} alt={album.name} />
+                    </Link>
+                )
+            }
+            )}
         </Soundtracks>
     );
 };

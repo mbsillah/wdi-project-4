@@ -21,7 +21,7 @@ class Album extends Component {
     }
 
     saveSong = (track) => {
-        
+
     }
 
     render() {
@@ -34,16 +34,19 @@ class Album extends Component {
             <div>
                 <h2>{this.state.album.name}</h2>
                 <img src={this.state.album.picture_full} alt={this.state.album.name} />
+                {this.state.album.composers.map((artist) => {
+                    return <h4>{artist.names.en}</h4>
+                })}
                 {this.state.discs.map((disc, index) => {
                     return disc.tracks.map((track) => {
                         return (
                             <div>
                                 <AlbumTrack track={track}
-                                 album={this.state.album}
-                                 currentUser={this.props.currentUser}
-                                 currentPlaylist={this.props.currentPlaylist}
-                                 userLoggedIn={this.props.userLoggedIn}
-                                 />
+                                    album={this.state.album}
+                                    currentUser={this.props.currentUser}
+                                    currentPlaylist={this.props.currentPlaylist}
+                                    userLoggedIn={this.props.userLoggedIn}
+                                />
                             </div>
                         )
                     })

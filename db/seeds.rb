@@ -25,7 +25,7 @@ playlist2 = Playlist.create(
 )
 
 dope = Track.create(
-    title: "Wanted You",
+    title: "Wanted You feat. Lil Uzi Vert",
     album: "Wanted You",
     total_playtime: "3:48",
     release_year: "2017",

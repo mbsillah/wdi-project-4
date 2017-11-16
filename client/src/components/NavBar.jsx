@@ -28,14 +28,14 @@ class NavBar extends Component {
     render() {
         return (
             <NavStyle>
-            <div>
-            <Link to="/">Home</Link>
-            {this.props.userLoggedIn ? <Link to={`/user/${this.props.currentUser.id}`}>Your Page/Playlists</Link> : <Link to="/login" >Log In</Link>}
-                <form onSubmit={this.handleSubmit}>
-                    <span>Search Albums/Products: <input type="search" onChange={this.handleChange} /></span>
-                    <button>Search</button>
-                </form>
-            </div>
+                <div>
+                    <Link to="/">Home</Link>
+                    {this.props.userLoggedIn ? <Link to={`/user/${this.props.currentUser.id}`}>Your Page/Playlists</Link> : <Link to="/login" >Log In</Link>}
+                    <form onSubmit={this.handleSubmit}>
+                        <span>Search Albums/Products: <input type="search" onChange={this.handleChange} /></span>
+                        <button>Search</button>
+                    </form>
+                </div>
             </NavStyle>
         );
     }

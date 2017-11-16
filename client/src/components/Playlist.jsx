@@ -5,13 +5,9 @@ import Tracks from './Tracks'
 class Playlist extends Component {
 
     state = {
-        selectedPlaylist: [],
         tracks: []
     }
 
-    componentDidUpdate() {
-
-    }
 
     getTracks = async (playlistid) => {
         try {
@@ -20,8 +16,18 @@ class Playlist extends Component {
         } catch (error) {
             console.log(error)
         }
-
     }
+
+    deleteTrack = async (trackId, playlistId) => {
+        try {
+            const res = await axios.delete(`/api/user/${this.props.currentUser.id}/playlist/${playlistId}/track/${trackId}`)
+            this.setState({ tracks: res.data })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
 
     render() {
         return (
@@ -34,7 +40,7 @@ class Playlist extends Component {
                             return <option value={playlist.id} >{playlist.name}</option>
                         })}
                     </select>
-                    <Tracks tracks={this.state.tracks} />
+                    <Tracks tracks={this.state.tracks} deleteTrack={this.deleteTrack} />
                 </div>
             </div>
         );
