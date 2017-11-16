@@ -11,7 +11,10 @@ Playlist.destroy_all
 Track.destroy_all
 
 musa = User.create(
-    username: "msillah"
+    username: "msillah",
+    email: "luffyfan99@yahoo.com",
+    password: "abc12345",
+    password_confirmation: "abc12345"
 )
 
 playlist1 = Playlist.create(

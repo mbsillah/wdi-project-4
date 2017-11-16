@@ -12,7 +12,7 @@ class AlbumTrack extends Component {
 
     componentWillMount() {
         this.setState({
-            title: this.props.track.names.English,
+            title: this.props.track.names.English || this.props.track.names.Romaji,
             album: this.props.album.name,
             total_playtime: this.props.track.track_length,
             release_year: this.props.album.release_date
@@ -23,7 +23,7 @@ class AlbumTrack extends Component {
         try {
             const userId = this.props.currentUser.id
             const playlistId = this.props.currentPlaylist
-            const res = await axios.post(`/api/user/${userId}/playlist/${playlistId}/track`, {
+            const res = await axios.post(`/api/users/${userId}/playlists/${playlistId}/tracks`, {
                 'track': this.state
             })
             alert(`Added ${this.state.title} your current playlist`)
@@ -36,7 +36,7 @@ class AlbumTrack extends Component {
     render() {
         return (
             <div>
-                <p>{this.props.track.names.English}{this.props.userLoggedIn ? <button onClick={() => this.addSongtoCurrentPlaylist(this.state)}>+</button> : null}</p>
+                <p>{this.props.track.names.English || this.props.track.names.Romaji}{this.props.userLoggedIn ? <button onClick={() => this.addSongtoCurrentPlaylist(this.state)}>+</button> : null}</p>
             </div>
         );
     }

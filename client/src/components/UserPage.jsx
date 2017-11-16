@@ -12,7 +12,7 @@ class UserPage extends Component {
     async componentWillMount() {
         try {
             const userId = this.props.currentUser.id
-            const res = await axios.get(`/api/user/${userId}/playlist`)
+            const res = await axios.get(`/api/users/${userId}/playlists`)
             this.setState({ playlists: res.data })
         } catch (error) {
             console.log(error)

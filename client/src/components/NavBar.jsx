@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import styled from 'styled-components'
+import axios from 'axios'
 
 const NavStyle = styled.div`
 padding: 15px;
@@ -13,6 +14,8 @@ class NavBar extends Component {
         search: ""
     }
 
+
+
     handleChange = (event) => {
         this.setState({ search: event.target.value })
     }
@@ -23,22 +26,44 @@ class NavBar extends Component {
         this.props.history.push(`/search/${this.state.search}`)
     }
 
-
-
-    render() {
-        return (
-            <NavStyle>
-                <div>
-                    <Link to="/">Home</Link>
-                    {this.props.userLoggedIn ? <Link to={`/user/${this.props.currentUser.id}`}>Your Page/Playlists</Link> : <Link to="/login" >Log In</Link>}
-                    <form onSubmit={this.handleSubmit}>
-                        <span>Search Albums/Products: <input type="search" onChange={this.handleChange} /></span>
-                        <button>Search</button>
-                    </form>
-                </div>
-            </NavStyle>
-        );
+    logOut = async (event) => {
+        
+        try {
+            await axios.delete('/auth/sign_out')
+            localStorage.clear()
+            this.props.signOut()
+        } catch (error) {
+            console.log(error)
+        }
     }
+
+renderUserMessage() {
+    if (this.props.userLoggedIn) {
+        return (
+            <div>
+                <Link to="/">Home</Link>
+                <Link to={`/user/${this.props.currentUser.id}`}>Your Page/Playlists</Link>
+                <button onClick={() => this.logOut()}>Sign Out</button>
+                <form onSubmit={this.handleSubmit}>
+                    <span>Search Albums/Products: <input type="search" onChange={this.handleChange} /></span>
+                    <button>Search</button>
+                </form>
+            </div>
+        );
+    } else {
+        return null
+    }
+}
+
+render() {
+    return (
+        <NavStyle>
+            <div>
+                {this.renderUserMessage()}
+            </div>
+        </NavStyle>
+    );
+}
 }
 
 export default withRouter(NavBar);

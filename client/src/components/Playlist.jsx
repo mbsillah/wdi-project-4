@@ -11,7 +11,7 @@ class Playlist extends Component {
 
     getTracks = async (playlistid) => {
         try {
-            const res = await axios.get(`/api/user/${this.props.currentUser.id}/playlist/${playlistid}/track`)
+            const res = await axios.get(`/api/users/${this.props.currentUser.id}/playlists/${playlistid}/tracks`)
             this.setState({ tracks: res.data })
         } catch (error) {
             console.log(error)
@@ -20,7 +20,7 @@ class Playlist extends Component {
 
     deleteTrack = async (trackId, playlistId) => {
         try {
-            const res = await axios.delete(`/api/user/${this.props.currentUser.id}/playlist/${playlistId}/track/${trackId}`)
+            const res = await axios.delete(`/api/users/${this.props.currentUser.id}/playlists/${playlistId}/tracks/${trackId}`)
             this.setState({ tracks: res.data })
         } catch (error) {
             console.log(error)
