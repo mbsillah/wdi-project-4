@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-
-//process.env.REACT_APP_SECRET
+import ReactPlayer from 'react-player'
 
 class Youtube extends Component {
 
@@ -32,15 +31,20 @@ class Youtube extends Component {
     render() {
         return (
             <div>
-                <iframe
-                    title={this.props.track.title} 
-                    width="560" height="315"
-                    src={`https://www.youtube.com/embed/${this.state.youtubeId}?rel=0`}
-                    frameBorder="0"
-                    allowFullScreen></iframe>
+            <ReactPlayer 
+            url={`https://www.youtube.com/watch?v=${this.state.youtubeId}`} controls
+            width='50%'
+            height='50%'/>
             </div>
         );
     }
 }
 
 export default Youtube;
+
+//<iframe
+//                    title={this.props.track.title} 
+//                    width="560" height="315"
+//                    src={`https://www.youtube.com/embed/${this.state.youtubeId}?rel=0`}
+//                    frameBorder="0"
+//                    allowFullScreen></iframe>
