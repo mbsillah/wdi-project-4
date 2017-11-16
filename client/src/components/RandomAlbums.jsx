@@ -14,9 +14,9 @@ const RandomAlbums = (props) => {
     }
     return (
         <Soundtracks>
-            {props.albums.map((album) => {
+            {props.albums.map((album, index) => {
                 return (
-                    <Link to={`/${album.link}`}>
+                    <Link key={index} to={`/${album.link}`}>
                         <img src={album.picture_full} alt={album.name} />
                     </Link>
                 )

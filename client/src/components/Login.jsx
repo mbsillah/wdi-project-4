@@ -21,8 +21,8 @@ class Login extends Component {
         return (
             <div>
                 All users:
-                {this.state.users.map((user) => {
-                    return <Link onClick={() => this.props.changeLogInState(user)} to="/">{user.username}</Link>
+                {this.state.users.map((user, index) => {
+                    return <Link key={index} onClick={() => this.props.changeLogInState(user)} to="/">{user.username}</Link>
                 })}
             </div>
         );

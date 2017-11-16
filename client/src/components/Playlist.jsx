@@ -36,8 +36,8 @@ class Playlist extends Component {
                     <label>Select your playlist: </label>
                     <select onChange={(event) => this.getTracks(event.target.value)}>
                         <option>-Choose Playlist-</option>
-                        {this.props.playlists.map((playlist) => {
-                            return <option value={playlist.id} >{playlist.name}</option>
+                        {this.props.playlists.map((playlist, index) => {
+                            return <option key={index} value={playlist.id} >{playlist.name}</option>
                         })}
                     </select>
                     <Tracks tracks={this.state.tracks} deleteTrack={this.deleteTrack} />

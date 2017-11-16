@@ -7,8 +7,8 @@ const UserEdit = (props) => {
             <label>Select your current playlist (All added songs will be put into here): </label>
             <select value={props.currentPlaylist} onChange={(event) => props.setCurrentPlaylist(event.target.value)}>
                 <option>-Choose Playlist-</option>
-                {props.playlists.map((playlist) => {
-                    return <option value={playlist.id} >{playlist.name}</option>
+                {props.playlists.map((playlist, index) => {
+                    return <option key={index} value={playlist.id} >{playlist.name}</option>
                 })}
             </select>
         </div>

@@ -4,9 +4,9 @@ import Youtube from './Youtube'
 const Tracks = (props) => {
     return (
         <div>
-            {props.tracks.map((track) => {
+            {props.tracks.map((track, index) => {
                 return (
-                    <div>
+                    <div key={index}>
                         <h3>{track.title}<button onClick={() => props.deleteTrack(track.id, track.playlist_id)}> X </button></h3>
                         <p>{track.album}</p>
                         <p>{track.release_year}</p>

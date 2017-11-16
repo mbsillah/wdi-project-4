@@ -34,13 +34,16 @@ class Album extends Component {
             <div>
                 <h2>{this.state.album.name}</h2>
                 <img src={this.state.album.picture_full} alt={this.state.album.name} />
-                {this.state.album.composers.map((artist) => {
-                    return <h4>{artist.names.en}</h4>
+                <h4>Release Date:</h4><p>{this.state.album.release_date}</p>
+                <h4>Composers: </h4>
+                {this.state.album.composers.map((artist, index) => {
+                    return <p key={index}>{artist.names.en}</p>
                 })}
+                <h4>Tracks: </h4>
                 {this.state.discs.map((disc, index) => {
-                    return disc.tracks.map((track) => {
+                    return disc.tracks.map((track, index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <AlbumTrack track={track}
                                     album={this.state.album}
                                     currentUser={this.props.currentUser}

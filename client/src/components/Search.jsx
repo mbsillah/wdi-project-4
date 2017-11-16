@@ -51,17 +51,17 @@ class Search extends Component {
         return (
             <div>
                 <h4>Albums: </h4>
-                {this.state.albumResults[0].map(album => {
+                {this.state.albumResults[0].map((album, index) => {
                     return (
-                        <Link to={`/${album.link}`}>
+                        <Link key={index} to={`/${album.link}`}>
                             <h6>{album.titles.en}</h6>
                         </Link>
                     )
                 })}
                 <h4>Products: </h4>
-                {this.state.productResults[0].map(product => {
+                {this.state.productResults[0].map((product,index) => {
                     return (
-                        <Link to={`/${product.link}`}>
+                        <Link key={index} to={`/${product.link}`}>
                             <h6>{product.names.en}</h6>
                         </Link>
                     )
