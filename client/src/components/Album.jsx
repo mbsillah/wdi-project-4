@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import styled from 'styled-components'
 import AlbumTrack from './AlbumTrack'
+
+const Style = styled.div`
+img {
+    padding: 20px;
+    float:left
+}
+
+.trackContainer {
+    padding-left: 10px
+}
+`
 
 class Album extends Component {
 
@@ -31,30 +43,43 @@ class Album extends Component {
         }
 
         return (
-            <div>
+            <Style>
                 <h2>{this.state.album.name}</h2>
                 <img src={this.state.album.picture_full} alt={this.state.album.name} />
-                <h4>Release Date:</h4><p>{this.state.album.release_date}</p>
-                <h4>Composers: </h4>
-                {this.state.album.composers.map((artist, index) => {
-                    return <p key={index}>{artist.names.en}</p>
-                })}
-                <h4>Tracks: </h4>
-                {this.state.discs.map((disc, index) => {
-                    return disc.tracks.map((track, index) => {
-                        return (
-                            <div key={index}>
-                                <AlbumTrack track={track}
-                                    album={this.state.album}
-                                    currentUser={this.props.currentUser}
-                                    currentPlaylist={this.props.currentPlaylist}
-                                    userLoggedIn={this.props.userLoggedIn}
-                                />
-                            </div>
-                        )
-                    })
-                })}
-            </div>
+                <div>
+                    <h4>Release Date: </h4><p>{this.state.album.release_date}</p>
+                    <h4>Composers: </h4>
+                    {this.state.album.composers.map((artist, index) => {
+                        return <p key={index}>{artist.names.en}</p>
+                    })}
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <div className="trackContainer">
+                    <h4>Tracks: </h4>
+                    {this.state.discs.map((disc, index) => {
+                        return disc.tracks.map((track, index) => {
+                            return (
+                                <div key={index}>
+                                    <AlbumTrack track={track}
+                                        album={this.state.album}
+                                        currentUser={this.props.currentUser}
+                                        currentPlaylist={this.props.currentPlaylist}
+                                        userLoggedIn={this.props.userLoggedIn}
+                                    />
+
+                                </div>
+
+                            )
+
+                        })
+
+                    })}
+                </div>
+            </Style>
         );
     }
 }
