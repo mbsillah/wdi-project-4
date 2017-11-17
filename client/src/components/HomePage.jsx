@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import RandomAlbums from './RandomAlbums'
+import styled from 'styled-components'
+
+const AlbumStyle = styled.div`
+text-align: center;
+font-family: 'Fugaz One', cursive;
+
+`
+
 
 class HomePage extends Component {
 
@@ -34,11 +42,12 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Welcome to Nerdify</h1>
-                <h3>Powered by Youtube & VGMDB</h3>
+            <AlbumStyle>
+                <h1 className="title">Welcome to Nerdify</h1>
+                <h3>- Powered by Youtube & VGMDB -</h3>
+                <h4>Top Albums of the Week: </h4>
                 <RandomAlbums albums={this.state.albums} loading={this.state.loading} />
-            </div>
+            </AlbumStyle>
         );
     }
 }

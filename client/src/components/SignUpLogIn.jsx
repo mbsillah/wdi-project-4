@@ -31,7 +31,7 @@ class SignUpLogIn extends Component {
             this.state.login.email,
             this.state.login.password
         )
-        
+
     }
 
     handleSignUp = (event) => {

@@ -59,7 +59,7 @@ class Search extends Component {
                     )
                 })}
                 <h4>Products: </h4>
-                {this.state.productResults[0].map((product,index) => {
+                {this.state.productResults[0].map((product, index) => {
                     return (
                         <Link key={index} to={`/${product.link}`}>
                             <h6>{product.names.en}</h6>

@@ -6,6 +6,11 @@ const Soundtracks = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: space-around;
+img {
+    border-style: solid;
+    border-color: black;
+    margin: 10px;
+}
 `
 
 const RandomAlbums = (props) => {

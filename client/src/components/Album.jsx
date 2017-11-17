@@ -5,8 +5,11 @@ import AlbumTrack from './AlbumTrack'
 
 const Style = styled.div`
 img {
-    padding: 20px;
-    float:left
+    margin: 20px 20px 50px 20px;    
+    float:left;
+    border-style: solid;
+    border-color: black;
+
 }
 
 .trackContainer {

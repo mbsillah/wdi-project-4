@@ -5,7 +5,7 @@ I have made a Spotify-like music app, that uses the VGMDB.info API and Youtube A
 **Live Site:** <https://morning-lake-22827.herokuapp.com/>
 
 ## Technologies Used
- * HTML5, CSS3, Javascript, React, Ruby on Rails, Material UI,
+ * HTML5, CSS3, Javascript, React, Ruby on Rails, PostGRES Styled-Components,
  * Visual Studio Code
  * Project Planning - [Trello](https://trello.com/b/7vby01fi/wdi-project-3)
  * [ERD](https://github.com/sillah2010/wdi-project-4/blob/master/project-screenshots/ERD.png)

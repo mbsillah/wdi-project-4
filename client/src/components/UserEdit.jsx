@@ -4,16 +4,16 @@ import axios from 'axios'
 class UserEdit extends Component {
 
     state = {
-       user: {
-           username:'',
-           email:''
-       }
+        user: {
+            username: '',
+            email: ''
+        }
     }
 
     async componentWillMount() {
         const userId = this.props.currentUser.id
         const res = await axios.get(`/api/users/${userId}`)
-        this.setState({ user: res.data})
+        this.setState({ user: res.data })
     }
 
     handleChange = (event) => {
@@ -43,7 +43,7 @@ class UserEdit extends Component {
                 </select>
 
                 <h2>Edit Username</h2>
-                
+
                 <form>
                     <div>
                         <label htmlFor="username">Username: </label>

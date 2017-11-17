@@ -10,7 +10,7 @@ const Tracks = (props) => {
                         <h3>{track.title}<button onClick={() => props.deleteTrack(track.id, track.playlist_id)}> X </button></h3>
                         <p>{track.album}</p>
                         <p>{track.release_year}</p>
-                        <Youtube track={track}/>
+                        <Youtube track={track} />
                     </div>
                 )
             })}
