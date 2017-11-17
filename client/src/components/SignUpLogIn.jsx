@@ -51,8 +51,27 @@ class SignUpLogIn extends Component {
     render() {
         return (
             <div>
+                <h2>Log In</h2>
+                <form className="logInForm">
+                    <div>
+                        <label htmlFor="email">E-mail: </label>
+                        <input onChange={this.handleLogIn} type="text" name="email" value={this.state.login.email} />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password: </label>
+                        <input onChange={this.handleLogIn} type="password" name="password" value={this.state.login.password} />
+                    </div>
+                    <button onClick={this.signIn}>Log In</button>
+                </form>
+                <br />
+                <br />
+
+                <h1>Or</h1>
+
+                <br />
+                <br />
                 <h2>Sign Up</h2>
-                <form>
+                <form className="signUpForm">
                     <div>
                         <label htmlFor="email">E-mail: </label>
                         <input onChange={this.handleSignUp} type="text" name="email" value={this.state.signUp.email} />
@@ -67,26 +86,6 @@ class SignUpLogIn extends Component {
                             value={this.state.signUp.password_confirmation} />
                     </div>
                     <button onClick={this.signUp}>Sign Up</button>
-                </form>
-
-                <br />
-                <br />
-
-                <h1>Or</h1>
-
-                <br />
-                <br />
-                <h2>Log In</h2>
-                <form>
-                    <div>
-                        <label htmlFor="email">E-mail: </label>
-                        <input onChange={this.handleLogIn} type="text" name="email" value={this.state.login.email} />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleLogIn} type="password" name="password" value={this.state.login.password} />
-                    </div>
-                    <button onClick={this.signIn}>Log In</button>
                 </form>
             </div>
         )
