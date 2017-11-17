@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import NewPlaylist from './NewPlaylist'
 
 class UserEdit extends Component {
 
@@ -49,6 +50,8 @@ class UserEdit extends Component {
                         <label htmlFor="username">Username: </label>
                         <input onChange={this.handleChange} type="text" name="username" value={this.state.user.username} />
                         <button onClick={this.handleSubmit}>Change</button>
+                        <h4>Add A New Playlist</h4>
+                        <NewPlaylist currentUser={this.props.currentUser}/>
                     </div>
                 </form>
 

@@ -5,7 +5,10 @@ class Api::PlaylistsController < ApplicationController
       end
     
       def create
-        @playlist = Playlist.create!(playlist_params)
+        @user = User.find(params[:user_id])
+        @playlist = Playlist.new(playlist_params)
+        @user.playlists << @playlist
+        @playlist.save!
         render json: @playlist
       end
     
