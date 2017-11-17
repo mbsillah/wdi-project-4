@@ -47,6 +47,7 @@ class App extends Component {
       this.changeLogInState()
     } catch (error) {
       console.log(error)
+      alert("Wrong username/password combo")
     }
   }
 
@@ -62,6 +63,7 @@ class App extends Component {
       this.changeLogInState()
     } catch (error) {
       console.log(error)
+      alert("Wrong username/password combo")
     }
   }
 

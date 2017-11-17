@@ -6,7 +6,6 @@ import styled from 'styled-components'
 const AlbumStyle = styled.div`
 text-align: center;
 font-family: 'Fugaz One', cursive;
-
 `
 
 
