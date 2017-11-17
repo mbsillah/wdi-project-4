@@ -19,4 +19,6 @@ I have made a Spotify-like music app, that uses the VGMDB.info API and Youtube A
 [6](<https://github.com/sillah2010/wdi-project-4/blob/master/project-screenshots/Screen%20Shot%202017-11-10%20at%2010.07.55%20AM.png>)
 
 ## Future Updates
+- I want to add a much cleaner UI and incorporate Material UI into the front-end design
+
 
