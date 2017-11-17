@@ -10,7 +10,6 @@ class YoutubeLink extends Component {
     async componentWillMount() {
         try {
         const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_SECRET}&part=snippet&q=${this.props.track.names.English || this.props.track.names["English (Official)"]}%20${this.props.album.name}&maxResults=1`)
-        console.log(res)
         this.setState({ youtubeId: res.data.items[0].id.videoId })
         } catch (error) {
             console.log(error)

@@ -15,7 +15,7 @@ class AlbumTrack extends Component {
 
     componentWillMount() {
         this.setState({
-            title: this.props.track.names.English || this.props.track.names["English (Official)"],
+            title: this.props.track.names.English || this.props.track.names["English (Official)"] || this.props.track.names["English (official)"],
             album: this.props.album.name,
             total_playtime: this.props.track.track_length,
             release_year: this.props.album.release_date,

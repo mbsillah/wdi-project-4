@@ -21,10 +21,15 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    const signedIn = userIsLoggedIn()
-    if (signedIn) {
-      setAxiosDefaults()
-      this.setState({ userLoggedIn: true })
+    try {
+      const signedIn = userIsLoggedIn()
+      if (signedIn) {
+        setAxiosDefaults()
+        const res = await axios.get('/auth/validate_token')
+        this.setState({ userLoggedIn: true, currentUser: res.data.data })
+      }
+    } catch (error) {
+      console.log(error)
     }
 
   }
