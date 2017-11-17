@@ -51,7 +51,6 @@ class App extends Component {
         password
       }
       const res = await axios.post('/auth/sign_in', payload)
-      console.log(res.data.data)
       this.setState({ currentUser: res.data.data })
       saveAuthTokens(res.headers)
       this.changeLogInState()

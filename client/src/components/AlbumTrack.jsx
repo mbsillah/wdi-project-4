@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import YoutubeLink from './YoutubeLink'
+
 
 class AlbumTrack extends Component {
 
@@ -7,15 +9,16 @@ class AlbumTrack extends Component {
         title: '',
         album: '',
         total_playtime: '',
-        release_year: ''
+        release_year: '',
     }
+
 
     componentWillMount() {
         this.setState({
-            title: this.props.track.names.English || this.props.track.names.Romaji,
+            title: this.props.track.names.English || this.props.track.names["English (Official)"],
             album: this.props.album.name,
             total_playtime: this.props.track.track_length,
-            release_year: this.props.album.release_date
+            release_year: this.props.album.release_date,
         })
     }
 
@@ -36,7 +39,7 @@ class AlbumTrack extends Component {
     render() {
         return (
             <div>
-                <p>{this.props.track.names.English || this.props.track.names.Romaji}{this.props.userLoggedIn ? <button onClick={() => this.addSongtoCurrentPlaylist(this.state)}>+</button> : null}</p>
+                <YoutubeLink track={this.props.track} album={this.props.album}/><button onClick={() => this.addSongtoCurrentPlaylist(this.state)}>+</button>
             </div>
         );
     }

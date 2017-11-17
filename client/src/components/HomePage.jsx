@@ -36,6 +36,7 @@ class HomePage extends Component {
         return (
             <div>
                 <h1>Welcome to Nerdify</h1>
+                <h3>Powered by Youtube & VGMDB</h3>
                 <RandomAlbums albums={this.state.albums} loading={this.state.loading} />
             </div>
         );
