@@ -31,6 +31,10 @@ class HomePage extends Component {
             updatedHomeAlbums.push(res5.data)
             const res6 = await axios.get(`https://vgmdb.info/album/4593`)
             updatedHomeAlbums.push(res6.data)
+            const res7 = await axios.get(`https://vgmdb.info/album/21100`)
+            updatedHomeAlbums.push(res7.data)
+            const res8 = await axios.get(`https://vgmdb.info/album/63053`)
+            updatedHomeAlbums.push(res8.data)
             this.setState({ albums: updatedHomeAlbums, loading: false })
         } catch (error) {
             console.log(error)

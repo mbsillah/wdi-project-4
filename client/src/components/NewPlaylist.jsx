@@ -21,7 +21,7 @@ class NewPlaylist extends Component {
         const res = await axios.post(`/api/users/${this.props.currentUser.id}/playlists`, {
             'playlist': this.state.playlist
         })
-        console.log(this.props.currentUser)
+        console.log(res)
 
     }
 

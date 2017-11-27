@@ -17,7 +17,13 @@ button {
     color: white;
     font-size: 17px;
     text-decoration: none; 
+    padding: 10px;
+    :hover {
+        color: #6b7784
+    }
 }
+
+
 span {
     text-size: 17px;
 }
