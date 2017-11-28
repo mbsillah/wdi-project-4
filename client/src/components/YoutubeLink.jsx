@@ -19,7 +19,7 @@ class YoutubeLink extends Component {
     render() {
         return (
             <div>
-                <a href={`https://www.youtube.com/watch?v=${this.state.youtubeId}`}>{this.props.track.names.English || this.props.track.names["English (Official)"]}</a>
+                <a target="_blank" href={`https://www.youtube.com/watch?v=${this.state.youtubeId}`}>{this.props.track.names.English || this.props.track.names["English (Official)"]}</a>
             </div>
         );
     }
