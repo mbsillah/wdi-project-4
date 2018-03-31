@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Playlist from './Playlist'
 import UserEdit from './UserEdit'
+import styled from 'styled-components'
+
+//const UserStyle = styled.div`
+//    display: flex;
+//    flex-direction: column;
+//    justify-content: space-around;
+//    align-items: center;
+//`
 
 class UserPage extends Component {
 

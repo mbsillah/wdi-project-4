@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import Tracks from './Tracks'
+import styled from 'styled-components'
+
+const PlaylistStyle = styled.div`
+    display: flex;
+`
 
 class Playlist extends Component {
 
@@ -31,7 +36,7 @@ class Playlist extends Component {
 
     render() {
         return (
-            <div>
+            <PlaylistStyle>
                 <div>
                     <label>Select your playlist: </label>
                     <select onChange={(event) => this.getTracks(event.target.value)}>
@@ -42,7 +47,7 @@ class Playlist extends Component {
                     </select>
                     <Tracks tracks={this.state.tracks} deleteTrack={this.deleteTrack} />
                 </div>
-            </div>
+            </PlaylistStyle>
         );
     }
 }
