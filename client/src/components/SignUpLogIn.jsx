@@ -34,13 +34,7 @@ class SignUpLogIn extends Component {
         }
 
     }
-
     
-    componentWillMount() {
-        alert("Login with: luffyfan99@yahoo.com/abc12345. Or sign up with your own email. Thank you")
-    }
-    
-
     signUp = (event) => {
         event.preventDefault()
         this.props.signUp(
@@ -76,6 +70,8 @@ class SignUpLogIn extends Component {
 
     render() {
         return (
+            <div>
+                <h1>To Login Use: luffyfan99@yahoo.com, abc12345</h1>
             <Styled>
                 <div className="loginContainer">
                     <h2>Log In</h2>
@@ -108,6 +104,7 @@ class SignUpLogIn extends Component {
                     </form>
                 </div>
             </Styled>
+            </div>
         )
     }
 }
