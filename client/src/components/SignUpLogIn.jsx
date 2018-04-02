@@ -35,6 +35,12 @@ class SignUpLogIn extends Component {
 
     }
 
+    
+    componentWillMount() {
+        alert("Login with: luffyfan99@yahoo.com/abc12345. Or sign up with your own email. Thank you")
+    }
+    
+
     signUp = (event) => {
         event.preventDefault()
         this.props.signUp(
@@ -58,6 +64,7 @@ class SignUpLogIn extends Component {
         const newSignUp = { ...this.state.signUp }
         newSignUp[attribute] = event.target.value
         this.setState({ signUp: newSignUp })
+        alert("Check your email for authorization")
     }
 
     handleLogIn = (event) => {
