@@ -58,7 +58,9 @@ class Album extends Component {
                 </div>
                 <br />
                 <br />
-                <br />
+                <p>To listen to each track, just click on the name, and the link will open in a new tab. <br/>
+                If you like said track hit the "+" button to add it to your current playlist.
+                </p>
                 <br />
                 <br />
                 <div className="trackContainer">
