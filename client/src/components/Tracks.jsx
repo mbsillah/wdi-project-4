@@ -4,7 +4,13 @@ import styled from 'styled-components'
 
 const TrackStyle = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    align-content: center;
+`
+
+const IndividualTrack = styled.div`
+    margin: 0px 30px;
 `
 
 const Tracks = (props) => {
@@ -12,12 +18,12 @@ const Tracks = (props) => {
         <TrackStyle>
             {props.tracks.map((track, index) => {
                 return (
-                    <div key={index}>
+                    <IndividualTrack key={index}>
                         <h3>{track.title}<button onClick={() => props.deleteTrack(track.id, track.playlist_id)}> X </button></h3>
                         <p>{track.album}</p>
                         <p>{track.release_year}</p>
                         <Youtube track={track} />
-                    </div>
+                    </IndividualTrack>
                 )
             })}
         </TrackStyle>

@@ -30,12 +30,11 @@ class Youtube extends Component {
 
     render() {
         return (
-            <div>
                 <ReactPlayer
                     url={`https://www.youtube.com/watch?v=${this.state.youtubeId}`} controls
                     width='50%'
-                    height='50%' />
-            </div>
+                    height='50%'
+                     />
         );
     }
 }
