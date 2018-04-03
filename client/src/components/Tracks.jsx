@@ -1,9 +1,15 @@
 import React from 'react';
 import Youtube from './Youtube'
+import styled from 'styled-components'
+
+const TrackStyle = styled.div`
+    display: flex;
+    justify-content: space-around;
+`
 
 const Tracks = (props) => {
     return (
-        <div>
+        <TrackStyle>
             {props.tracks.map((track, index) => {
                 return (
                     <div key={index}>
@@ -14,7 +20,7 @@ const Tracks = (props) => {
                     </div>
                 )
             })}
-        </div>
+        </TrackStyle>
     );
 };
 
